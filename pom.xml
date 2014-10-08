@@ -83,11 +83,17 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.3</version>
+		</dependency>
 	</dependencies>
 	<properties>
-		<spring.framework.version>3.2.1.RELEASE</spring.framework.version>
+		<spring.framework.version>4.1.1.RELEASE</spring.framework.version>
 	</properties>
 	<build>
+	<finalName>ping</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -123,7 +129,7 @@
 					</scanTargetPatterns>
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-							<port>9090</port>
+							<port>2020</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>

@@ -10,24 +10,18 @@
 		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 	<context:annotation-config />
-	<context:component-scan base-package="com.capella.babynames" />
+	<context:component-scan base-package="com.capella.ping.server.controllers" />
 	<mvc:annotation-driven />
-	<mvc:resources location="/WEB-INF/scripts/" mapping="/static/scripts/**" />
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<mvc:resources location="/resources/css/" mapping="/static/css/**" />
+	<mvc:resources location="/resources/font-awesome-4.1.0/" mapping="/static/font-awesome-4.1.0/**" />
+	<mvc:resources location="/resources/fonts/" mapping="/static/fonts/**" />
+	<mvc:resources location="/resources/js/" mapping="/static/js/**" />
+	<mvc:resources location="/resources/less/" mapping="/static/less/**" />
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView"></property>
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-
-
-	<cache:annotation-driven />
-
-	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager"
-		p:cache-manager-ref="ehcache" />
-	<bean id="ehcache"
-		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
-		p:config-location="classpath:ehcache.xml" />
-
 </beans>
