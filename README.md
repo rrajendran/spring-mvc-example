@@ -3,4 +3,4 @@ spring-mvc
 
 mvn clean jetty:run
 
-http://localhost:9090/spring-mvc/
+Navigate to <a href="http://localhost:2020/spring-mvc-example/">http://localhost:2020/spring-mvc-example/</a>
