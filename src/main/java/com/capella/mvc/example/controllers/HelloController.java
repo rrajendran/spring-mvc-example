@@ -3,11 +3,10 @@ package com.capella.mvc.example.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Controller
 public class HelloController {
@@ -16,9 +15,10 @@ public class HelloController {
 
 
 	@RequestMapping(value = { "/" })
-	public String handleRequest(@ModelAttribute ModelAndView model) throws Exception {
-		model.addObject("message", LocalDate.now());
-		return "index";
+	public ModelAndView handleRequest() throws Exception {
+		ModelAndView model = new ModelAndView("index");
+		model.addObject("message", LocalDateTime.now());
+		return model;
 	}
 
 
