@@ -1,3 +1,7 @@
+Status
+======
+[![Build Status](https://travis-ci.org/rrajendran/spring-aop.svg)](https://travis-ci.org/rrajendran/spring-aop)
+
 spring-mvc
 ==========
 
