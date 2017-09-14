@@ -1,0 +1,9 @@
+version: '2.0'
+services:
+    elasticsearch:
+      image: elasticsearch:alpine
+      mem_limit: 4m
+      container_name:
+        "elasticsearch"
+      ports:
+        - "9200:9200"
